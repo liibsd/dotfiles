@@ -30,7 +30,7 @@ exists xbps-remove && {
 test -h /usr/bin/sudo || doas ln -s /usr/bin/doas /usr/bin/sudo
 
 ## Config
-for config in `ls config`; do
+for config in `ls config -I bashrc`; do
 	test -d ~/.config/$config || mkdir ~/.config/$config
 	for file in `ls config/$config`; do
 		test -h ~/.config/$config/$file \
@@ -39,8 +39,8 @@ for config in `ls config`; do
 done
 
 ## Bash
-test -e ~/.bash_profile || echo "test -f ~/.bashrc && . ~/.bashrc" > ~/.bash_profile
-test -h ~/.bashrc || ln -s ~/dotfiles/bashrc ~/.bashrc
+test -e ~/.bash_profile || echo "test -e ~/.bashrc && . ~/.bashrc" > ~/.bash_profile
+test -h ~/.bashrc || ln -s ~/dotfiles/config/bashrc ~/.bashrc
 
 ## User services
 test -d /etc/sv/runsvdir-main || {
