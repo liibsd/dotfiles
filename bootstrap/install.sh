@@ -11,7 +11,7 @@ exists() {
 
 ## Install packages
 exists xbps-install && {
-	sudo xbps-install -Syu `cat .xbps`
+	sudo xbps-install -Syu `cat bootstrap/xbps.txt`
 	test -e /etc/xbps.d/00-ignorepkg-main.conf \
 		|| echo 'ignorepkg=openssh\nignorepkg=sudo\nignorepkg=nvi' | sudo tee /etc/xbps.d/00-ignorepkg-main.conf
 }
