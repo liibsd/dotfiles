@@ -17,13 +17,9 @@ make
 mesa
 musl-devel
 opendoas
-patch
 pipewire
-pkg-config
 qt6-wayland
 qutebrowser
 seatd
 sway
-tcc
 wl-clipboard
-wlroots0.18-devel
