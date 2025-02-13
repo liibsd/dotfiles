@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
-test -d ~/dotfiles || exit 1
+test "$USER" = main || exit 1
+test -d ~/dotfiles || exit 2
 cd ~/dotfiles
 which xbps-install >/dev/null 2>&1 && {
 	sudo xbps-install -Syu `cat .xbps`
