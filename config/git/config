@@ -1,0 +1,21 @@
+[user]
+email=
+name=void
+
+[init]
+defaultBranch=master
+
+[core]
+editor=kak
+
+[commit]
+verbose=true
+
+[format]
+pretty=%Cgreen%h%Creset %s
+
+[rebase]
+abbreviateCommands=true
+
+[credential "https://github.com"]
+helper = !gh auth git-credential

@@ -1,0 +1,2 @@
+colorscheme gruvbox-dark
+map global normal "#" ":comment-line<ret>"
