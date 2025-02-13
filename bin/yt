@@ -1,0 +1,5 @@
+#!/usr/bin/env sh
+re='(?<=<a href="/watch\?v=)...........(?="><p dir="auto">)|(?<=<a href="/watch\?v=..........."><p dir="auto">).*(?=</p></a>)'
+seq 5 | xargs -P0 -i@ curl -s "https://cal1.iv.ggtyler.dev/search?q=`echo "$@" | tr ' ' '+'`&page=@" \
+	| grep -Po "$re" | paste -d ' ' - - | fzf -m | awk '{print $1}' \
+	| xargs -r -i@ echo 'https://youtube.com/watch?v=@/'
