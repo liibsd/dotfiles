@@ -9,3 +9,5 @@ for cfg in `ls config`; do
 			|| ln -s ~/dotfiles/config/$cfg/$file ~/.config/$cfg/$file
 	done
 done
+test -e ~/.bash_profile || echo "test -f ~/.bashrc && . ~/.bashrc" > ~/.bash_profile
+test -h ~/.bashrc || ln -s ~/dotfiles/bashrc ~/.bashrc
