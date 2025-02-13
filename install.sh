@@ -4,7 +4,7 @@ cd ~/dotfiles
 which xbps-install >/dev/null 2>&1 && {
 	sudo xbps-install -Syu `cat .xbps`
 	test -e /etc/xbps.d/00-ignorepkg-main.conf \
-		|| echo 'ignorepkg=openssh\nignorepkg=sudo\nignorepkg=nvi' | doas tee /etc/xbps.d/00-ignorepkg-main.conf
+		|| echo 'ignorepkg=openssh\nignorepkg=sudo\nignorepkg=nvi' | sudo tee /etc/xbps.d/00-ignorepkg-main.conf
 }
 which doas >/dev/null 2>&1 && { test -e /etc/doas.conf || echo 'permit nopass :wheel' | sudo tee /etc/doas.conf; }
 which xbps-remove >/dev/null 2>&1 && {
