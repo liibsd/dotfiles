@@ -19,11 +19,11 @@ exists xbps-remove && {
 	exists nvi && doas xbps-remove -y nvi
 }
 test -h /usr/bin/sudo || doas ln -s /usr/bin/doas /usr/bin/sudo
-for cfg in `ls config`; do
-	test -d ~/.config/$cfg || mkdir ~/.config/$cfg
-	for file in `ls config/$cfg`; do
-		test -h ~/.config/$cfg/$file \
-			|| ln -s ~/dotfiles/config/$cfg/$file ~/.config/$cfg/$file
+for config in `ls config`; do
+	test -d ~/.config/$config || mkdir ~/.config/$config
+	for file in `ls config/$config`; do
+		test -h ~/.config/$config/$file \
+			|| ln -s ~/dotfiles/config/$config/$file ~/.config/$config/$file
 	done
 done
 test -e ~/.bash_profile || echo "test -f ~/.bashrc && . ~/.bashrc" > ~/.bash_profile
