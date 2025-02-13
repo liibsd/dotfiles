@@ -1,4 +1,5 @@
 default_border pixel 1
+smart_borders on
 bindsym {
 	Super+Return exec "foot"
 
