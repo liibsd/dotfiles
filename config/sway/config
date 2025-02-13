@@ -1,17 +1,33 @@
 default_border pixel 1
 bindsym {
 	Super+Return exec "foot"
+
 	Super+A split none
 	Super+S split vertical
 	Super+E split horizontal
+
 	Super+C kill
 	Super+Q quit
+
 	Super+H focus left
 	Super+J focus down
 	Super+K focus up
 	Super+L focus right
+
 	Super+Shift+H move left
 	Super+Shift+J move down
 	Super+Shift+K move up
 	Super+Shift+L move right
+
+	Super+1 workspace number 1
+	Super+2 workspace number 2
+	Super+3 workspace number 3
+	Super+4 workspace number 4
+	Super+5 workspace number 5
+
+	Super+Shift+1 move container to workspace number 1
+	Super+Shift+2 move container to workspace number 2
+	Super+Shift+3 move container to workspace number 3
+	Super+Shift+4 move container to workspace number 4
+	Super+Shift+5 move container to workspace number 5
 }
