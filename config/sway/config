@@ -1,0 +1,17 @@
+default_border pixel 1
+bindsym {
+	Super+Return exec "foot"
+	Super+A split none
+	Super+S split vertical
+	Super+E split horizontal
+	Super+C kill
+	Super+Q quit
+	Super+H focus left
+	Super+J focus down
+	Super+K focus up
+	Super+L focus right
+	Super+Shift+H move left
+	Super+Shift+J move down
+	Super+Shift+K move up
+	Super+Shift+L move right
+}
