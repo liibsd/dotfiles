@@ -13,7 +13,6 @@ grub-x86_64-efi
 kakoune
 keyd
 libspa-bluetooth
-make
 mesa
 musl-devel
 opendoas
