@@ -10,7 +10,7 @@ PKGS      = wlroots-0.18 wayland-server xkbcommon libinput
 DWLCFLAGS = `pkg-config --cflags $(PKGS)` $(DWLCPPFLAGS)
 LDLIBS    = `pkg-config --libs $(PKGS)`
 
-dwl: dwl.o util.o
+dwl: protocols dwl.o util.o
 	tcc dwl.o util.o $(DWLCFLAGS) $(LDFLAGS) $(LDLIBS) -o $@
 
 .PHONY: protocols
