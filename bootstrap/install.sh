@@ -1,7 +1,6 @@
 #!/usr/bin/env sh
 ## Checks
-test "$USER" = main || exit 1
-test -d ~/dotfiles || exit 2
+test -d ~/dotfiles || exit 1
 cd ~/dotfiles
 
 ## Helper
