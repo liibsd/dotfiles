@@ -8,9 +8,6 @@ exists() {
 	which "$@" >/dev/null 2>&1 || return 1
 }
 
-## Install packages
-exists xbps-install && sudo xbps-install -Syu `cat bootstrap/xbps.txt`
-
 ## Config
 for config in `ls config -I bashrc`; do
 	test -d ~/.config/$config || mkdir ~/.config/$config
