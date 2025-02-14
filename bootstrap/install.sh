@@ -43,10 +43,10 @@ test -e ~/.bash_profile || echo "test -e ~/.bashrc && . ~/.bashrc" > ~/.bash_pro
 test -h ~/.bashrc || ln -s ~/dotfiles/config/bashrc ~/.bashrc
 
 ## User services
-test -d /etc/sv/runsvdir-main || {
+test -d /etc/sv/ && { test -d /etc/sv/runsvdir-main || {
 	doas mkdir /etc/sv/runsvdir-main
 	echo '#!/bin/sh\nexec chpst -u "main:`id -Gn main | tr " " ":"`" runsvdir /home/main/dotfiles/service' \
 		| doas tee /etc/sv/runsvdir-main/run
 	doas chmod +x /etc/sv/runsvdir-main/run
 	doas ln -s /etc/sv/runsvdir-main /var/service
-}
+}; }
