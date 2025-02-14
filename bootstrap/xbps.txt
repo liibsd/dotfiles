@@ -16,7 +16,6 @@ libspa-bluetooth
 make
 mesa
 musl-devel
-opendoas
 patch
 pipewire
 pkg-config
