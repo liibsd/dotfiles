@@ -13,12 +13,16 @@ grub-x86_64-efi
 kakoune
 keyd
 libspa-bluetooth
+make
 mesa
 musl-devel
 opendoas
 pipewire
+pkg-config
 qt6-wayland
 qutebrowser
 seatd
 sway
+tcc
 wl-clipboard
+wlroots0.18-devel
