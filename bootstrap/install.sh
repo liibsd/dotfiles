@@ -10,17 +10,15 @@ exists() {
 }
 
 ## Install packages
-exists xbps-install && {
-	sudo xbps-install -Syu `cat bootstrap/xbps.txt`
-	test -e /etc/xbps.d/00-ignorepkg-main.conf \
-		|| echo 'ignorepkg=openssh\nignorepkg=sudo\nignorepkg=nvi' | sudo tee /etc/xbps.d/00-ignorepkg-main.conf
-}
+exists xbps-install && sudo xbps-install -Syu `cat bootstrap/xbps.txt`
 
 ## Doas config
 exists doas && { test -e /etc/doas.conf || echo 'permit nopass :wheel' | sudo tee /etc/doas.conf; }
 
 ## Remove packages
 exists xbps-remove && {
+	test -e /etc/xbps.d/00-ignorepkg-main.conf \
+		|| echo 'ignorepkg=openssh\nignorepkg=sudo\nignorepkg=nvi' | sudo tee /etc/xbps.d/00-ignorepkg-main.conf
 	exists ssh && doas xbps-remove -y openssh
 	test -h /usr/bin/sudo || { exists sudo && doas xbps-remove -y sudo; }
 	exists nvi && doas xbps-remove -y nvi
