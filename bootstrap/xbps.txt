@@ -17,6 +17,7 @@ make
 mesa
 musl-devel
 opendoas
+patch
 pipewire
 pkg-config
 qt6-wayland
